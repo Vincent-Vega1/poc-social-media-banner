@@ -9,6 +9,10 @@ import { appLinks } from "./lib/AppLinks";
 
 
 export default async function Home() {
+
+  //no localization/languages, no real smart banner styling
+  //also idk if we need to consider that some logic runs an every page request, or if we can somehow only run the logic when the first request in a session starts.
+
   const headersList = await headers();
   const userAgent = headersList.get('user-agent') || '';
   const inApp = isInAppBrowser(userAgent);
@@ -18,7 +22,7 @@ export default async function Home() {
   console.log('Platform:', platform);
   console.log('inApp?:', inApp);
 
-  return (
+  return ( //the whole thing needs to sit in the layout or somewhere more global propably.
     <div>
     <meta name="smartbanner:title" content="Smart Application"></meta>
     {inApp && platform && <AppBanner platform={platform} appLinks={appLinks} />}
