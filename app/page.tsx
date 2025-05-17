@@ -18,9 +18,9 @@ export default async function Home() {
   const inApp = isInAppBrowser(userAgent);
   const platform = detectPlatform(userAgent);
 
-  console.log('User Agent:', userAgent);
-  console.log('Platform:', platform);
-  console.log('inApp?:', inApp);
+  //console.log('User Agent:', userAgent);
+  //console.log('Platform:', platform);
+  //console.log('inApp?:', inApp);
 
   return ( //the whole thing needs to sit in the layout or somewhere more global propably.
     <div>
